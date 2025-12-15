@@ -1,0 +1,11 @@
+:root{--bg:#0b0b0b;--card:#111;--muted:#9aa;--accent:#0ab;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#fff;font-family:Inter,Arial,Helvetica,"Segoe UI",sans-serif}
+.top{padding:28px;text-align:center;background:#0f0f0f;border-bottom:1px solid #222}
+.container{max-width:980px;margin:24px auto;padding:0 12px}
+.match-card{background:var(--card);padding:14px;border-radius:10px;margin-bottom:12px;border:1px solid #222;display:flex;align-items:center;justify-content:space-between}
+.team{display:flex;align-items:center;gap:12px}
+.team img{width:40px;height:40px;object-fit:contain;border-radius:6px}
+.score{font-weight:700;font-size:18px;text-align:center}
+.footer{padding:18px;text-align:center;border-top:1px solid #222;margin-top:30px;color:var(--muted)}
+.loading, .no-data, .error { text-align:center; color:var(--muted); padding:20px }
