@@ -27,3 +27,17 @@ def live_remote(request):
         return Response({"success": True, "data": data})
     except Exception as e:
         return Response({"success": False, "error": str(e)})
+
+from django.conf import settings
+from django.http import JsonResponse
+from api.management.commands.fetch_matches import Command as FetchCommand
+
+@api_view(["POST"])
+def trigger_fetch(request):
+    secret = request.headers.get("X-CRON-KEY")
+    if secret != settings.SECRET_KEY:
+        return Response({"error": "Unauthorized"}, status=401)
+
+    cmd = FetchCommand()
+    cmd.handle()
+    return Response({"success": True})

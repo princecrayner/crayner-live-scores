@@ -6,4 +6,5 @@ urlpatterns = [
     path('match/<int:api_id>/', views.MatchDetailView.as_view(), name='match-detail'),
     path('live-remote/', views.live_remote, name='live-remote'),
     path('livepage/', views.live_page, name='live-page'),
+    path("trigger-fetch/", views.trigger_fetch),
 ]
