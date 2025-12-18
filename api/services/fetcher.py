@@ -9,7 +9,9 @@ HEADERS = {"x-apisports-key": settings.API_FOOTBALL_KEY}
 def fetch_live_fixtures():
     """Return the 'response' payload from API-Football for live fixtures."""
     url = f"{API_URL}/fixtures"
-    params = {"live": "all"}
+    params = {
+    "date": datetime.utcnow().strftime("%Y-%m-%d")
+}
     r = requests.get(url, headers=HEADERS, params=params, timeout=15)
     r.raise_for_status()
     return r.json().get("response", [])
