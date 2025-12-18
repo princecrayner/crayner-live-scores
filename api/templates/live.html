@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Crayner Live Scores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/css/style.css">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <header class="top">
@@ -23,6 +25,6 @@
     <p>© 2025 Crayner Live Scores</p>
   </footer>
 
-  <script src="/static/js/app.js"></script>
+  <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>
